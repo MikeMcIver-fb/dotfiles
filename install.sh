@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-GITHUB_USERNAME="Carlton-Perkins"
+GITHUB_USERNAME="MikeMcIver-fb"
 
 echo "[INSTALL] Ohmyzsh"
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
