@@ -133,14 +133,8 @@ if command -v gh &>/dev/null; then
 fi
 
 # Bind git user info
-## Work account
-if [[ $(id -un) -eq "carltonperkins" ]]; then
-  git config --global user.name 'Carlton Perkins'
-  git config --global user.email 'carltonperkins@fb.com'
-else
-  git config --global user.name 'Carlton Perkins'
-  git config --global user.email 'carltonrp52@gmail.com'
-fi
+git config --global user.name 'MikeMcIver-fb'
+git config --global user.email 'mikemciver@fb.com'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
