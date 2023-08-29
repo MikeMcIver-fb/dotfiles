@@ -13,7 +13,7 @@ echo "[INSTALL] cargo-binstall"
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
 echo "[INSTALL] cargo deps"
-cargo -y binstall bat du-dust bandwhich fd-find ripgrep exa git-delta
+cargo binstall -y bat du-dust bandwhich fd-find ripgrep exa git-delta
 
 echo "[INSTALL] Chezmoi"
 export BINDIR=$HOME/.local/bin
