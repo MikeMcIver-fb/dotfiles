@@ -137,6 +137,11 @@ if command -v gh &>/dev/null; then
   source <(gh completion -s zsh)
 fi
 
+if command -v eksctl &>/dev/null; then
+  source <(eksctl completion zsh)
+fi
+
+
 # Bind git user info
 ## Work account
 if [[ $(id -un) -eq "carltonperkins" ]]; then
