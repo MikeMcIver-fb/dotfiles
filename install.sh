@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ex
 
 GITHUB_USERNAME="Carlton-Perkins"
 
