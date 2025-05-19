@@ -3,6 +3,21 @@ set -e
 
 GITHUB_USERNAME="Carlton-Perkins"
 
+# If nix is installed use nixdotfiles instead
+if command -v nix &>/dev/null; then
+  echo "[SETUP] Nix dotfiles"
+  gh repo clone Carlton-Perkins/nix-dotfiles ~/nix-dotfiles
+  pushd ~/nix-dotfiles
+
+  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+
+  nix-shell '<home-manager>' -A install
+  home-manager switch --flake ./
+  popd
+  exit 0
+fi
+
 echo "[INSTALL] Ohmyzsh"
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 
