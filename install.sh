@@ -8,14 +8,14 @@ echo "[CHECK] Is Nix installed?"
 if command -v nix &>/dev/null; then
   echo "[SETUP] Nix dotfiles"
   gh repo clone Carlton-Perkins/nix-dotfiles ~/nix-dotfiles
-  pushd ~/nix-dotfiles
+  cd ~/nix-dotfiles
 
   nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
   nix-channel --update
 
   nix-shell '<home-manager>' -A install
   home-manager switch --flake ./
-  popd
+
   echo "[INSTALL] Nix dotfiles complete"
   exit 0
 fi
