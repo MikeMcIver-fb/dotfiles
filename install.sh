@@ -4,6 +4,7 @@ set -e
 GITHUB_USERNAME="Carlton-Perkins"
 
 # If nix is installed use nixdotfiles instead
+echo "[CHECK] Is Nix installed?"
 if command -v nix &>/dev/null; then
   echo "[SETUP] Nix dotfiles"
   gh repo clone Carlton-Perkins/nix-dotfiles ~/nix-dotfiles
@@ -15,6 +16,7 @@ if command -v nix &>/dev/null; then
   nix-shell '<home-manager>' -A install
   home-manager switch --flake ./
   popd
+  echo "[INSTALL] Nix dotfiles complete"
   exit 0
 fi
 
