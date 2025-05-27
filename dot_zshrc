@@ -144,12 +144,12 @@ fi
 
 # Bind git user info
 ## Work account
-if [[ $(id -un) -eq "carltonperkins" ]]; then
-  git config --global user.name 'Carlton Perkins'
-  git config --global user.email 'carltonperkins@fb.com'
+if [[ $(id -un) -eq "MikeMcIver-fb" ]]; then
+  git config --global user.name 'Mike McIver'
+  git config --global user.email 'mikemciver@fb.com'
 else
-  git config --global user.name 'Carlton Perkins'
-  git config --global user.email 'carltonrp52@gmail.com'
+  git config --global user.name 'Mike McIver'
+  git config --global user.email 'mikemciver@outlook.com'
 fi
 
 # Compilation flags
