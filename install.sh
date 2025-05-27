@@ -1,13 +1,13 @@
 #!/bin/sh
 set -ex
 
-GITHUB_USERNAME="Carlton-Perkins"
+GITHUB_USERNAME="MikeMcIver-fb"
 
 # If nix is installed use nixdotfiles instead
 echo "[CHECK] Is Nix installed?"
 if command -v nix &>/dev/null; then
   echo "[SETUP] Nix dotfiles"
-  gh repo clone Carlton-Perkins/nix-dotfiles ~/nix-dotfiles
+  gh repo clone MikeMcIver-fb/nix-dotfiles ~/nix-dotfiles
   cd ~/nix-dotfiles
 
   nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
