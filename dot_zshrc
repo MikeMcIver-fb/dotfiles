@@ -190,3 +190,4 @@ alias bzt="bazel test"
 alias ibzr="ibazel -run_command_before clear run"
 alias ibzb="ibazel -run_command_before clear build"
 alias ibzt="ibazel -run_command_before clear test"
+alias agent='env -u CI agent'
