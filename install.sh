@@ -3,26 +3,6 @@ set -ex
 
 GITHUB_USERNAME="MikeMcIver-fb"
 
-# If nix is installed use nixdotfiles instead
-echo "[CHECK] Is Nix installed?"
-if command -v nix &>/dev/null; then
-  echo "[SETUP] Nix dotfiles"
-  if gh repo clone MikeMcIver-fb/nix-dotfiles ~/nix-dotfiles; then
-    cd ~/nix-dotfiles
-
-    nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-    nix-channel --update
-
-    nix-shell '<home-manager>' -A install
-    home-manager switch --flake ./ -b backup
-
-    echo "[INSTALL] Nix dotfiles complete"
-    exit 0
-  else
-    echo "[WARN] nix-dotfiles repo not found, falling through to standard install"
-  fi
-fi
-
 echo "[INSTALL] Ohmyzsh"
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 
